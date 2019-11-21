@@ -96,7 +96,7 @@ contract EventTicketsV2 {
 
     function endSale(uint eventId) public isOwner {
         events[eventId].isOpen = false;
-        owner.transfer(address(this).balance);
         emit LogEndSale(owner, address(this).balance, eventId);
+        owner.transfer(address(this).balance);
     }
 }
